@@ -35,6 +35,34 @@ header {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+.no-container-text{
+  margin-left: 20%;;
+}
 .no-container img {
+  width: 100%;
+}
+section.content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: blue;
+  padding: none;
+}
+section.participation{
+  display: flex;
+  width: 80%;
+}
+.portfolio{
+  margin: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  width: 100%;
+}
+.portfolio-item{
+  width: 100%;
+  overflow: hidden;
+}
+.portfolio-item img{
   width: 100%;
 }
