@@ -1,3 +1,5 @@
+/* https://css-tricks.com/building-progress-ring-quickly/ */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
 body {
   display: flex;
   flex-direction: column;
@@ -6,8 +8,33 @@ body {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: normal;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 150.2%;
+}
+h2{
+    font-size: 40px;
+    font-weight: 700;
+    color: #084482;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+h3{
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  color: #084482;
+}
+
+.join-us{
+  background-color: #00AEFF;
+  padding: 5px 15px;
+  border-radius: 4px;
+
+}
+.join-us a{
+  font-weight: 700;
+  color: white;
 }
 .content {
   width: 80%;
@@ -18,7 +45,6 @@ body {
   list-style-type: none;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 3rem;
 }
 .logo {
   height: 50px;
@@ -30,22 +56,34 @@ body {
 header {
   margin-top: 20px;
 }
+header a{
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #474747;
+}
 .no-container {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 .no-container-text{
-  margin-left: 20%;;
+  margin-left: 20%;
+  
+  margin-right: 10%;
 }
 .no-container img {
   width: 100%;
+}
+section{
+  margin-top: 200px;
 }
 section.content{
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: blue;
   padding: none;
 }
 section.participation{
@@ -66,3 +104,9 @@ section.participation{
 .portfolio-item img{
   width: 100%;
 }
+.portfolio .show-more{
+  display: none;
+}
+
+
+
