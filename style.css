@@ -1,0 +1,40 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 150.2%;
+}
+.content {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.navbar {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 3rem;
+}
+.logo {
+  height: 50px;
+  overflow: hidden;
+}
+.logo img {
+  height: 100%;
+}
+header {
+  margin-top: 20px;
+}
+.no-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.no-container img {
+  width: 100%;
+}
