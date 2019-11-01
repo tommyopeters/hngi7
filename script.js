@@ -55,7 +55,7 @@ $(document).ready(function() {
   circle.css("strokeDashoffset", "circumference");
 
   function setProgress(element, percent) {
-    const offset = (percent / 100) * circumference;
+    const offset = circumference - (percent / 100) * circumference;
     element.css("strokeDashoffset", `${offset}`);
   }
   function renumber(n) {
