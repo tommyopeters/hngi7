@@ -547,6 +547,9 @@ ul#link-list {
   .no-container-text {
     width: 100%;
   }
+  .portfolio {
+    grid-template-columns: 1fr 1fr;
+  }
   .participation {
     display: flex;
     flex-direction: column;
