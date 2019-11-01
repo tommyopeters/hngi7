@@ -1,10 +1,16 @@
-/* https://css-tricks.com/building-progress-ring-quickly/ */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Oswald:500&display=swap");
+
+:root {
+  --primary-width: 80%;
+  --secondary-width: 75%;
+}
+
 html {
   font-size: 62.75%;
 }
 body {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,11 +21,14 @@ body {
   font-size: 16px;
   line-height: 150.2%;
 }
+.no-display {
+  display: none;
+}
 ul {
   list-style-type: none;
 }
-li a,
-li a:hover {
+a,
+a:hover {
   text-decoration: none;
 }
 p {
@@ -52,6 +61,7 @@ h4 {
   font-weight: 700;
 }
 h5 {
+  font-size: 1.6rem;
   color: rgba(0, 0, 0, 0.5);
 }
 button {
@@ -63,6 +73,9 @@ button {
   font-weight: 700;
   font-size: 1.5rem;
   border-radius: 0.5rem;
+}
+section {
+  margin-top: 12rem;
 }
 .show-more-trigger {
   margin-top: -3rem;
@@ -83,11 +96,11 @@ button {
   color: white;
 }
 .content {
-  width: 70%;
+  width: var(--primary-width);
   display: flex;
   justify-content: space-between;
 }
-.navbar {
+#navbar {
   list-style-type: none;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -101,6 +114,7 @@ button {
 }
 header {
   margin-top: 3rem;
+  transition: margin 0.3s ease-in-out;
 }
 header a {
   font-family: "Open Sans";
@@ -117,7 +131,7 @@ header a {
   grid-template-columns: repeat(2, 1fr);
 }
 .no-container-text {
-  margin-left: 30%;
+  margin-left: 20%;
 
   margin-right: 10%;
 }
@@ -127,9 +141,7 @@ header a {
 .no-container img {
   width: 100%;
 }
-section {
-  margin-top: 20rem;
-}
+
 section.content {
   display: flex;
   flex-direction: column;
@@ -160,31 +172,35 @@ section.content {
   height: 0;
 }
 
-section.participation {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 70%;
-}
-.participation-image {
-  justify-self: end;
-}
-.participation button {
-  margin-top: 3rem;
+@media only screen and (min-width: 700px) {
+  section.participation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: var(--primary-width);
+  }
+  .participation-image {
+    justify-self: end;
+  }
+  .participation button {
+    margin-top: 3rem;
+  }
 }
 .tracks h2 {
   width: 100%;
   text-align: center;
 }
 .curriculum {
+  width: 65%;
   display: grid;
   grid-template-columns: 6fr 4fr;
 }
 .curriculum ul {
+  height: 100%;
+  padding-bottom: 10%;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: space-between;
 }
 .curriculum ul li a {
   color: #00aeff;
@@ -192,7 +208,8 @@ section.participation {
 .mentors {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 5% 0% 5% 10%;
+  padding: 5% 5% 5% 10%;
+  gap: 10%;
   background-color: rgba(196, 196, 196, 0.1);
 }
 .mentors-text h2 {
@@ -200,7 +217,6 @@ section.participation {
 }
 .mentors-text p {
   font-size: 1.6rem;
-  width: 70%;
 }
 .see-all-mentors {
   display: flex;
@@ -244,7 +260,7 @@ section.participation {
   color: #00aeff;
 }
 .sponsors {
-  width: 75%;
+  width: var(--secondary-width);
   align-items: center;
   justify-content: center;
   margin-bottom: 10rem;
@@ -292,11 +308,11 @@ section.participation {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-top: 20rem;
+  margin-top: 10rem;
   padding-top: 7rem;
 }
 #footer .container {
-  max-width: 75%;
+  max-width: var(--secondary-width);
 }
 #footer-logo {
   width: 30rem;
@@ -361,7 +377,7 @@ ul#link-list {
   color: #00aeff;
 }
 .progress-ring__circle {
-  transition: stroke-dashoffset 0.35s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  /* transition: stroke-dashoffset 0.35s; */
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
 }
@@ -369,6 +385,8 @@ ul#link-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
+  margin-top: 4rem;
+  margin-bottom: 6rem;
 }
 .countdown-section span {
   font-family: "Oswald";
@@ -376,4 +394,181 @@ ul#link-list {
   font-size: 2rem;
   color: #676767;
   margin-top: 1rem;
+}
+.svg-value {
+  font-family: "Oswald";
+}
+
+/*  */
+/*  */
+#hamburger a {
+  text-decoration: none;
+  color: #232323;
+  transition: color 0.3s ease;
+}
+
+#menuToggle {
+  display: block;
+  position: relative;
+
+  z-index: 1;
+
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  /* top: -7px;
+  left: -5px; */
+
+  cursor: pointer;
+
+  opacity: 0;
+  z-index: 2;
+
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: #cdcdcd;
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+  position: absolute;
+  padding: 0;
+  right: 0;
+  /* right: 0; */
+  top: -2000%;
+  /* top: 0; */
+}
+#menu {
+  line-height: 22px;
+  color: #474747;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  transition: all 0.4s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+#menuToggle input:checked ~ ul {
+  top: 0;
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+#menu li {
+  margin-bottom: 1rem;
+  width: 10rem;
+  font-size: 1.8rem;
+  justify-content: flex-end;
+}
+#menu .join-us {
+  padding: 1rem;
+}
+
+@media only screen and (min-width: 1440px) {
+  :root {
+    --primary-width: 70%;
+    --secondary-width: 70%;
+  }
+  .mentors {
+    padding: 5% 15% 5% 15%;
+  }
+  .mentors-text p {
+    width: 70%;
+  }
+  .no-container-text {
+    margin-left: 30%;
+
+    margin-right: 10%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  :root {
+    --primary-width: 90%;
+    --secondary-width: 90%;
+  }
+  .curriculum {
+    width: 80%;
+  }
+  #footer .container {
+    max-width: 90%;
+  }
+  .countdown-section {
+    display: none;
+    width: 100%;
+  }
+  .no-container-image {
+    display: none;
+  }
+  .no-container {
+    display: flex;
+  }
+  .no-container-text {
+    width: 100%;
+  }
+  .participation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .participation-text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .participation-image {
+    display: none;
+  }
+  .curriculum {
+    width: 100%;
+  }
+  .profile-cards {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2rem;
+  }
 }

@@ -30,13 +30,28 @@
           src="https://res.cloudinary.com/phiileo/image/upload/v1571147073/brand-logo_tx0mdt.png"
         />
       </div>
-      <ul class="navbar">
+      <ul id="navbar">
         <li class="nav-item"><a href="">Home</a></li>
         <li class="nav-item"><a href="">HNG6</a></li>
         <li class="nav-item"><a href="">Mentors</a></li>
         <li class="nav-item"><a href="">Contact</a></li>
         <li class="nav-item join-us"><a href="">Join HNG</a></li>
       </ul>
+      <nav role="navigation" id="hamburger">
+        <div id="menuToggle">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+          <ul id="menu">
+            <li class="nav-item"><a href="">Home</a></li>
+            <li class="nav-item"><a href="">HNG6</a></li>
+            <li class="nav-item"><a href="">Mentors</a></li>
+            <li class="nav-item"><a href="">Contact</a></li>
+            <li class="nav-item join-us"><a href="">Join HNG</a></li>
+          </ul>
+        </div>
+      </nav>
     </header>
     <section class="countdown-section">
       <h4>Countdown to HNG 7.0</h4>
@@ -53,6 +68,15 @@
               cx="80"
               cy="80"
             />
+            <text
+              id="days-value"
+              class="svg-value"
+              x="50%"
+              y="50%"
+              font-size="70px"
+              text-anchor="middle"
+              dy=".4em"
+            ></text>
           </svg>
           <span>DAYS</span>
         </div>
@@ -68,6 +92,15 @@
               cx="80"
               cy="80"
             />
+            <text
+              id="hours-value"
+              class="svg-value"
+              x="50%"
+              y="50%"
+              font-size="70px"
+              text-anchor="middle"
+              dy=".4em"
+            ></text>
           </svg>
           <span>HOURS</span>
         </div>
@@ -83,6 +116,15 @@
               cx="80"
               cy="80"
             />
+            <text
+              id="minutes-value"
+              class="svg-value"
+              x="50%"
+              y="50%"
+              font-size="70px"
+              text-anchor="middle"
+              dy=".4em"
+            ></text>
           </svg>
           <span>MINUTES</span>
         </div>
@@ -98,11 +140,20 @@
               cx="80"
               cy="80"
             />
+            <text
+              id="seconds-value"
+              class="svg-value"
+              x="50%"
+              y="50%"
+              font-size="70px"
+              text-anchor="middle"
+              dy=".4em"
+            ></text>
           </svg>
           <span>SECONDS</span>
         </div>
       </div>
-      <h3>REGISTER FOR HNG 7.0 NOW</h3>
+      <h3><a href="#">REGISTER FOR HNG 7.0 NOW</a></h3>
     </section>
     <section class="no-container">
       <div class="no-container-text">
